@@ -1,0 +1,66 @@
+:root {
+    --key-width: calc((100vw - 2 * 8vw) / 8);
+    --key-height: calc((100vh - 2 * 8vw) / 4);
+}
+
+/* .cursor {
+    width: var(--key-size);
+    height: var(--key-size);
+    border-radius: 50%;
+    background-color: hsla(0, 0, 0, 0);
+    border: 5px solid black;
+    position: absolute;
+    top: var(--cursorY);
+    left: var(--cursorX);
+    transform: translate(-50%, -50%);
+} */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    background-color: red;
+}
+
+/* .container input {
+    width: 80%;
+    font-size: calc(var(--key-size) * 0.3);
+    padding: .5em .2em;
+    margin: calc(var(--key-size) * 0.3) 0;
+    box-sizing: border-box;
+} */
+
+.keyRow {
+    display: flex;
+    justify-content: stretch;
+}
+
+.keyContainer {
+    width: var(--key-width);
+    height: var(--key-height);
+
+    /* min-height: var(--key-size); */
+    /* padding: calc(var(--key-size) *0.05); */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+.key {
+    width: 90%;
+    height: 90%;
+    background-color: var(--hover-color);
+    border-radius: calc(var(--key-width) * 0.1);
+    box-shadow: 0 0 10px var(--hover-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 500%;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    /* border: 1px solid black; */
+
+}

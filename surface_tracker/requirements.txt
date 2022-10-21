@@ -1,0 +1,8 @@
+msgpack
+numpy
+opencv-python
+pupil-apriltags
+pupil-labs-realtime-api
+requests
+surface-tracker @ git+https://github.com/pupil-labs/surface-tracker@pl_project_structure
+typing_extensions;python_version<'3.8'
