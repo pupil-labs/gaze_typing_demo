@@ -1,45 +1,33 @@
 import React from 'react'
 import Key from './Key'
-
+import "./KeyBoard.css"
 
 
 export default function KeyBoard({ cursorPosition }) {
     const [text, setText] = React.useState("")
+    const keys = []
 
-    // const firstRowValues = ["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"]
-    // const secondRowValues = ["A", "S", "D", "F", "G", "H", "J", "K", "L"]
-    // const thirdRowValues = ["Z", "X", "C", "V", "B", "N", "M"]
-    // const rows = [
-    //   ["A", "B", "C", "D", "E", "F"],
-    //   ["G", "H", "I", "J", "K", "L"],
-    //   ["M", "N", "O", "P", "Q", "R"],
-    //   ["S", "T", "U", "V", "W", "X"],
-    //   ["Y", "Z"],
-    // ]
-    const rows = [
-        // ["A"],
-        ["A", "B", "C", "D", "E", "F", "G", "H"],
-        ["I", "J", "K", "L", "M", "N", "O", "P"],
-        ["Q", "R", "S", "T", "U", "V", "W", "X"],
-        ["Y", "Z", " "],
-    ]
+    const letters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+    for (let i = 0; i < letters.length; i++) {
+        keys.push(<Key key={i} value={letters[i]} onTrigger={appendValue} cursorPosition={cursorPosition} />)
+    }
+    keys.push(<Key key={keys.length} value={"space"} onTrigger={() => appendValue(" ")} cursorPosition={cursorPosition} />)
+    keys.push(<Key key={keys.length} value={"reset"} onTrigger={resetText} cursorPosition={cursorPosition} />)
 
-    function inputKey(value) {
+    function appendValue(value) {
         setText(prevText => prevText + value)
     }
 
-    const keyBoard = rows.map((row, i) => {
-        return (
-            <div className="keyRow" key={i}>
-                {row.map((v, i) => <Key key={i} value={v} onTrigger={inputKey} cursorPosition={cursorPosition} />)}
-            </div>
-        )
-    })
+    function resetText() {
+        setText("")
+    }
 
     return (
-        <div className="container">
-            {keyBoard}
-            <input type="text" className="input" value={text} onChange={() => null} />
+        <div className="gridContainer">
+            {keys.map((key, i) => <div key={i} className="gridItem">{key}</div>)}
+            <div className="gridItem-input">
+                <input type="text" className="input" value={text} onChange={() => null} />
+            </div>
 
         </ div>
     )
