@@ -8,7 +8,7 @@
             "name": "Marker Mapper",
             "type": "python",
             "request": "launch",
-            "program": "marker_mapper_app.py",
+            "program": "surface_tracker/server.py",
             "console": "integratedTerminal",
             "justMyCode": false
         }

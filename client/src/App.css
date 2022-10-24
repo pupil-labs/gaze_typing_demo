@@ -3,9 +3,9 @@
     --key-height: calc((100vh - 2 * 8vw) / 4);
 }
 
-/* .cursor {
-    width: var(--key-size);
-    height: var(--key-size);
+.cursor {
+    width: min(var(--key-width), var(--key-height));
+    height: min(var(--key-width), var(--key-height));
     border-radius: 50%;
     background-color: hsla(0, 0, 0, 0);
     border: 5px solid black;
@@ -13,7 +13,7 @@
     top: var(--cursorY);
     left: var(--cursorX);
     transform: translate(-50%, -50%);
-} */
+}
 
 .container {
     display: flex;
