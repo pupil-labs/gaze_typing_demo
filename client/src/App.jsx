@@ -26,10 +26,7 @@ function App() {
     console.log(point);
     return point;
   }, [lastJsonMessage]);
-  // const cursorPosition = { x: 100, y: 100 };
-  // React.useEffect(() => {
-  //   console.log(lastJsonMessage);
-  // }, [lastJsonMessage]);
+
 
   return (
     <>

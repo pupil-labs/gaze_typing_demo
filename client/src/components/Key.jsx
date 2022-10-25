@@ -1,4 +1,5 @@
 import React from 'react'
+import "./Key.css"
 
 export default function Key({ value, onTrigger, cursorPosition }) {
     const containerRef = React.useRef(null)
@@ -55,8 +56,6 @@ export default function Key({ value, onTrigger, cursorPosition }) {
         setHover(false)
         setActivation(0)
     }
-
-    // console.log(containerRef.current?.getBoundingClientRect());
 
     return (
         <div className='keyContainer' ref={containerRef}>

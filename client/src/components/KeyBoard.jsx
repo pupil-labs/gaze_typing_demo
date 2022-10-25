@@ -1,6 +1,7 @@
 import React from 'react'
 import Key from './Key'
 import "./KeyBoard.css"
+import { Grid, TextField } from '@mui/material'
 
 
 export default function KeyBoard({ cursorPosition }) {
@@ -23,12 +24,12 @@ export default function KeyBoard({ cursorPosition }) {
     }
 
     return (
-        <div className="gridContainer">
-            {keys.map((key, i) => <div key={i} className="gridItem">{key}</div>)}
-            <div className="gridItem-input">
-                <input type="text" className="input" value={text} onChange={() => null} />
-            </div>
+        <Grid container columns={8} spacing={0} style={{ height: "100%" }}>
+            {keys.map((key, i) => <Grid item xs={1} key={i}>{key}</Grid>)}
+            <Grid item xs={4} className="gridItem-input">
+                <input type="text" value={text} onChange={() => null} />
+            </Grid>
 
-        </ div>
+        </ Grid>
     )
 }
