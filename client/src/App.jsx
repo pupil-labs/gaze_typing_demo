@@ -5,6 +5,7 @@ import "./App.css";
 import useMousePosition from './hooks/useMousePosition';
 import useWindowDimensions from './hooks/useWindowDimensions';
 import useWebSocket, { ReadyState } from 'react-use-websocket';
+import KeyMarkerBoard from './components/KeyMarkerBoard';
 
 
 function App() {
@@ -30,9 +31,10 @@ function App() {
 
   return (
     <>
-      <MarkerBorder markerSize="8vw">
+      {/* <MarkerBorder markerSize="8vw">
         <KeyBoard cursorPosition={cursorPosition} />
-      </MarkerBorder>
+      </MarkerBorder> */}
+      <KeyMarkerBoard cursorPosition={cursorPosition} />
       <div className="cursor" style={{ "--cursorX": cursorPosition.x + "px", "--cursorY": cursorPosition.y + "px" }}></div>
     </>
   )
